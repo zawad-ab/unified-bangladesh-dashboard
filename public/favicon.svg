@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Padma Brief">
+  <rect width="32" height="32" rx="6" fill="#0d5c44"/>
+  <path fill="#f4f0e6" fill-rule="evenodd" d="M8 5.6H17.2A5.8 5.8 0 0 1 17.2 17.2H12.4V22.2H8ZM12.4 8.8H16.6A2.55 2.55 0 0 1 16.6 13.9H12.4Z"/>
+  <rect x="8" y="24.5" width="9.2" height="2.05" fill="#9d1c1c"/>
+</svg>

@@ -1,0 +1,15 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { buildDesk } from "@/lib/news/build-desk";
+
+export const Route = createFileRoute("/api/desk")({
+  server: {
+    handlers: {
+      GET: async () => {
+        const desk = await buildDesk(false);
+        return Response.json(desk, {
+          headers: { "Cache-Control": "public, max-age=120" },
+        });
+      },
+    },
+  },
+});

@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: "Figtree", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Newsreader", Georgia, "Iowan Old Style", "Times New Roman", serif;
+  --color-paper: var(--paper);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-signal: var(--signal);
+  --color-card: var(--card);
+}
+
+:root {
+  --paper: #f4f0e6;
+  --ink: #1a1714;
+  --muted: #5c564c;
+  --line: #e0d6c6;
+  --accent: #0d5c44;
+  --signal: #9d1c1c;
+  --card: #fbf8f2;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #121411;
+    --ink: #f4efe6;
+    --muted: #b7b0a2;
+    --line: #2c3128;
+    --accent: #8fd0ae;
+    --signal: #ff8d7a;
+    --card: #1c201c;
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme="dark"] {
+  --paper: #121411;
+  --ink: #f4efe6;
+  --muted: #b7b0a2;
+  --line: #2c3128;
+  --accent: #8fd0ae;
+  --signal: #ff8d7a;
+  --card: #1c201c;
+  color-scheme: dark;
+}
+
+:root[data-theme="light"] {
+  --paper: #f4f0e6;
+  --ink: #1a1714;
+  --muted: #5c564c;
+  --line: #e0d6c6;
+  --accent: #0d5c44;
+  --signal: #9d1c1c;
+  --card: #fbf8f2;
+  color-scheme: light;
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    transition: background-color 200ms ease, color 200ms ease;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled),
+  summary {
+    cursor: pointer;
+  }
+
+  ::selection {
+    background: var(--accent);
+    color: var(--paper);
+  }
+
+  .veil {
+    background: color-mix(in srgb, var(--ink) 84%, transparent);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
